@@ -4,7 +4,7 @@ const fs = require('fs');
 const PATH_ROUTES = __dirname;
 
 const removeExt = (filename) => {
-    return filename.split('.')[0].split('-').shift();
+    return filename.split('-').shift();
 };
 
 fs.readdirSync(PATH_ROUTES).filter(file => {

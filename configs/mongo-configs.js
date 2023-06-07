@@ -6,12 +6,13 @@ const dbConnect = ()=>{
         DB_URI,
         {
             useNewUrlParser: true,
-            useUnifinedTopology: true
+            useUnifiedTopology: true
         }
     ).then(()=>{
         console.log('*** DB CONNECTION SUCCESS ***');
     }).catch((e)=>{
         console.log('___ DB CONNECTION FAILED ___');
+        console.error(e);
     });
 };
 

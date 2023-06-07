@@ -1,15 +1,17 @@
-const router = require('express').Router();
+const express = require('express');
 const fs = require('fs');
 
+const router = express.Router();
 const PATH_ROUTES = __dirname;
+
 
 const removeExt = (filename) => {
     return filename.split('-').shift();
 };
 
 fs.readdirSync(PATH_ROUTES).filter(file => {
-    const fileName = removeExt(file);
-    if (fileName !== 'index') {
+    if (file !== 'index.js') {
+        const fileName = removeExt(file);
         router.use(`/${fileName}`, require(`./${file}`));
     }
 });

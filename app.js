@@ -8,6 +8,7 @@ const PORT = process.env.PORT;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('storages'));
 app.use('/api', require('./routes'));
 
 app.listen(PORT, () => {
